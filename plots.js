@@ -93,6 +93,44 @@ function buildCharts(sample,data){
     };
 
     Plotly.newPlot('bubble', plotData2, layout2);
+
+    // GAUGE:
+    // Gauge for the weekly washing frequency
+    
+    var metadata = data.metadata;
+    var resultArray  = metadata.filter(sampleElement => sampleElement.id == sample);
+    var result = resultArray[0];
+    var gaugeValue = result.wfreq;
+
+    var data = [
+        {
+          domain: { x: [0, 1], y: [0, 1] },
+          value: gaugeValue,
+          title: { 
+              text: "Belly Button Washing Frequency <br> Scrubs per week"},
+          type: "indicator",
+          mode: "gauge+number",
+          gauge: {
+            axis: { range: [null, 9] },
+            steps: [
+              { range: [0, 1], color: "snow"},
+              { range: [1, 2], color: "cornsilk"},
+              { range: [2, 3], color: "linen"},
+              { range: [3, 4], color: "PaleGoldenRod" },
+              { range: [4, 5], color: "Khaki" },
+              { range: [5, 6], color: "darkKhaki" },
+              { range: [6, 7], color: "darkSeaGreen" },
+              { range: [7, 8], color: "mediumseagreen" },
+              { range: [8, 9], color: "SeaGreen" },
+            ]
+          }
+          
+        }
+      ];
+      
+      var layout = { width: 600, height: 450, margin: { t: 0, b: 0 }};
+
+      Plotly.newPlot('gauge', data, layout);
     
 }
 
