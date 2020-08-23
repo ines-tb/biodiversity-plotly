@@ -65,7 +65,7 @@ function buildCharts(sample,data){
     var plotData1 = [trace1];
 
     var layout1 = {
-        title: "Top 10 Bacterial Species Found"
+        title: "Top 10 Bacterial Cultures Found"
     }
     
     Plotly.newPlot("bar", plotData1, layout1);
