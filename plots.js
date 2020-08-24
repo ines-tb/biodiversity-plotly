@@ -112,17 +112,23 @@ function buildCharts(sample,data){
           mode: "gauge+number",
           gauge: {
             axis: { range: [null, 9] },
+            bar: {color: "darkslategray"},
             steps: [
               { range: [0, 1], color: "snow"},
-              { range: [1, 2], color: "cornsilk"},
-              { range: [2, 3], color: "linen"},
-              { range: [3, 4], color: "PaleGoldenRod" },
-              { range: [4, 5], color: "Khaki" },
-              { range: [5, 6], color: "darkKhaki" },
-              { range: [6, 7], color: "darkSeaGreen" },
-              { range: [7, 8], color: "mediumseagreen" },
-              { range: [8, 9], color: "SeaGreen" },
-            ]
+              { range: [1, 2], color: "LightGoldenRodYellow"},
+              { range: [2, 3], color: "PaleGoldenRod"},
+              { range: [3, 4], color: "Khaki"},
+              { range: [4, 5], color: "darkKhaki"},
+              { range: [5, 6], color: "olive"},
+              { range: [6, 7], color: "darkSeaGreen"},
+              { range: [7, 8], color: "mediumseagreen"},
+              { range: [8, 9], color: "SeaGreen"}
+            ],
+            threshold: {
+              line: { color: "darkSlateGray", width: 4 },
+              thickness: 0.75,
+              value: gaugeValue
+            }
           }
           
         }
